@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter x-coordinate of first point: ");
+        double x1 = input.nextDouble();
+        System.out.print("Enter y-coordinate of first point: ");
+        double y1 = input.nextDouble();
+
+        System.out.print("Enter x-coordinate of second point: ");
+        double x2 = input.nextDouble();
+        System.out.print("Enter y-coordinate of second point: ");
+        double y2 = input.nextDouble();
+
+        double slope = calculateSlope(x1, y1, x2, y2);
+
+        System.out.println("The slope is: " + slope);
+    }
+
+    public static double calculateSlope(double x1, double y1, double x2, double y2) {
+        return (y2 - y1) / (x2 - x1); 
+    }
+}
