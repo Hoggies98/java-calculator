@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Physics Calculator");
+        System.out.println("Choose a calculation:");
+        System.out.println("1. Speed (v = d/t)");
+        System.out.println("2. Force (F = m*a)");
+        System.out.println("3. Energy (E = m*c^2)");
+        
+        int choice = scanner.nextInt();
+        
+        switch (choice) {
+            case 1 -> {
+                System.out.print("Enter distance (m): ");
+                double distance = scanner.nextDouble();
+                System.out.print("Enter time (s): ");
+                double time = scanner.nextDouble();
+                double speed = distance / time;
+                System.out.println("Speed: " + speed + " m/s");
+            }
+            case 2 -> {
+                System.out.print("Enter mass (kg): ");
+                double mass = scanner.nextDouble();
+                System.out.print("Enter acceleration (m/s^2): ");
+                double acceleration = scanner.nextDouble();
+                double force = mass * acceleration;
+                System.out.println("Force: " + force + " N");
+            }
+            case 3 -> {
+                System.out.print("Enter mass (kg): ");
+                double mass = scanner.nextDouble();
+                final double c = 299792458; // Speed of light in m/s
+                double energy = mass * c * c;
+                System.out.println("Energy: " + energy + " J");
+            }
+            default -> System.out.println("Invalid choice");
+        }
+        
+        scanner.close();
+    }
+}
